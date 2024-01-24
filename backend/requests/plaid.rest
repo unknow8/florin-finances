@@ -1,0 +1,66 @@
+// Run Plaid Precheck
+GET http://localhost:3001/api/plaid/run_precheck
+Content-Type: application/json
+
+### Generate Link Token
+POST http://localhost:3001/api/plaid/generate_link_token
+Content-Type: application/json
+
+### Get Item Info
+POST http://localhost:3001/api/plaid/get_item_info
+Content-Type: application/json
+
+{
+    "accessToken": "access-sandbox-25d6a4a0-33f6-479d-be3e-dda5e54c4854"
+}
+
+### Get Account Info
+POST http://localhost:3001/api/plaid/get_accounts_info
+Content-Type: application/json
+
+{
+    "accessToken": "access-sandbox-25d6a4a0-33f6-479d-be3e-dda5e54c4854"
+}
+
+### Get Auth Info
+POST http://localhost:3001/api/plaid/auth/get
+Content-Type: application/json
+
+{
+    "access_token": "access-sandbox-1079f892-6f3d-4201-9da1-2d8ce250be3d"
+}
+
+### Get Balance Info
+POST http://localhost:3001/api/plaid/accounts/balance/get
+Content-Type: application/json
+
+{
+    "access_token": "access-sandbox-1079f892-6f3d-4201-9da1-2d8ce250be3d"
+}
+
+### Get Transactions by Incremental Updates
+POST http://localhost:3001/api/plaid/transactions/sync
+Content-Type: application/json
+
+{
+    "access_token": "access-sandbox-1079f892-6f3d-4201-9da1-2d8ce250be3d",
+    "count": 5
+}
+
+### Get Transactions by Date Range
+POST http://localhost:3001/api/plaid/transactions/get
+Content-Type: application/json
+
+{
+    "access_token": "access-sandbox-1079f892-6f3d-4201-9da1-2d8ce250be3d",
+    "start_date": "2023-04-14",
+    "end_date": "2024-04-17"
+}
+
+### Get Transaction Categories
+POST https://sandbox.plaid.com/categories/get
+Content-Type: application/json
+
+{
+}
+
